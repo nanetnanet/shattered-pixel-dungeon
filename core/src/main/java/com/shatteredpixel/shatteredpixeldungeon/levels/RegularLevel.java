@@ -101,7 +101,8 @@ public abstract class RegularLevel extends Level {
 		initRooms.add( roomExit = new ExitRoom());
 
 		//force max standard rooms and multiple by 1.5x for large levels
-		int standards = standardRooms(feeling == Feeling.LARGE);
+		//STANDAR ROOMS NOW TWICE AS BIG
+		int standards = standardRooms(feeling == Feeling.LARGE)* 2f;
 		if (feeling == Feeling.LARGE){
 			standards = (int)Math.ceil(standards * 1.5f);
 		}
@@ -118,7 +119,8 @@ public abstract class RegularLevel extends Level {
 			initRooms.add(new ShopRoom());
 
 		//force max special rooms and add one more for large levels
-		int specials = specialRooms(feeling == Feeling.LARGE);
+		//SPECIAL ROOMS NOW FOUR TIMES
+		int specials = specialRooms(feeling == Feeling.LARGE)* 4f;
 		if (feeling == Feeling.LARGE){
 			specials++;
 		}
